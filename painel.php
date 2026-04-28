@@ -6,10 +6,37 @@ if(!isset($_SESSION['usuario'])){
 }
 ?>
 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>painel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
 <h2>Bem-vindo <?php echo $_SESSION['usuario']; ?></h2>
 
-<a href="produtos.php">Cadastro de Produtos</a><br><br>
+<form style="text-align:center; background:none; box-shadow:none;">
 
-<a href="estoque.php">Gestão de Estoque</a><br><br>
+<a href="produtos.php">
+<button type="button">Cadastro de Produtos</button>
+</a>
 
-<a href="logout.php">Logout</a>
+<br><br>
+
+<a href="estoque.php">
+<button type="button">Gestão de Estoque</button>
+</a>
+
+<br><br>
+
+<a href="logout.php">
+<button type="button">Logout</button>
+</a>
+
+</form>
+
+</body>
+</html>

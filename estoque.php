@@ -5,7 +5,7 @@ if(!isset($_SESSION['usuario'])){
  header("Location:index.php");
 }
 
-/* MOVIMENTAÇÃO */
+
 if(isset($_POST['movimentar'])){
 
 $id = $_POST['produto'];
@@ -44,6 +44,14 @@ if($novo < $minimo){
 echo "Movimentação realizada.<br><br>";
 }
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Gestão de Estoque</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
 <h2>Gestão de Estoque</h2>
 

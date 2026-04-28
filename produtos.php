@@ -1,4 +1,7 @@
 <?php
+
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
 include("conexao.php");
 
 if(!isset($_SESSION['usuario'])){
@@ -29,27 +32,29 @@ if(isset($_GET['excluir'])){
 
 $id = $_GET['excluir'];
 
-mysqli_query($conn,"DELETE FROM produtos
-WHERE idprodutos='$id'");
+// primeiro apaga dependências
+mysqli_query($conn,"
+DELETE FROM movimentacoes
+WHERE produtos_idprodutos='$id'
+");
+
+// depois apaga o produto
+mysqli_query($conn,"
+DELETE FROM produtos
+WHERE idprodutos='$id'
+");
+
 }
 
-/* EDITAR */
-if(isset($_POST['editar'])){
-
-$id = $_POST['id'];
-$nome = $_POST['nome'];
-$marca = $_POST['marca'];
-$estoque = $_POST['estoque'];
-$minimo = $_POST['minimo'];
-
-mysqli_query($conn,"UPDATE produtos SET
-nome='$nome',
-marca='$marca',
-estoque='$estoque',
-minimo='$minimo'
-WHERE idprodutos='$id'");
-}
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Gestão de Estoque</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
 <h2>Cadastro de Produtos</h2>
 

@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>Login</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <h2>Sistema de Estoque</h2>
