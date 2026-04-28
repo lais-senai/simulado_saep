@@ -5,7 +5,7 @@ if(!isset($_SESSION['usuario'])){
  header("Location:index.php");
 }
 
-/* SALVAR NOVO PRODUTO */
+
 if(isset($_POST['salvar'])){
 
 $nome = $_POST['nome'];
@@ -24,7 +24,7 @@ VALUES
 }
 }
 
-/* EXCLUIR */
+
 if(isset($_GET['excluir'])){
 
 $id = $_GET['excluir'];
